@@ -54,6 +54,8 @@ Follow these steps to set up the project locally:
     ```
 
 
+
+
 ## Running the Application
 
 1. **Start Laravel Sail**: (optional [-d] flag for detached mode )
