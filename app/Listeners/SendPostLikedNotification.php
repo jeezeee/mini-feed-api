@@ -10,7 +10,7 @@ class SendPostLikedNotification
 {
     public function handle(PostLiked $event)
     {
-        $postOwner = $event->user;
+        $postOwner = $event->post->user;
 
         Mail::to($postOwner->email)->send(new PostLikedNotification($event->user, $event->post));
     }

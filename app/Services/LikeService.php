@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Events\PostLiked;
 use App\Models\Post;
 use App\Models\User;
 
@@ -21,6 +22,9 @@ class LikeService
             return 'Post unliked';
         } else {
             $post->likedBy()->attach($user->id);
+
+            PostLiked::dispatch($post, $user);
+
             return 'Post liked';
         }
     }
