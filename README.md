@@ -40,7 +40,7 @@ Follow these steps to set up the project locally:
     composer install
     ```
 
-4. **\*Set up the database**:
+4. **Set up the database**:
 
     - Make sure you have the correct database credentials in your `.env` file:
 
