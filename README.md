@@ -113,12 +113,16 @@ You can run the seeders manually with:
 sail artisan db:seed
 ```
 
+
+
 ## API Routes
 
-| Method | URI                    | Action                         | Auth Required |
-| ------ | ---------------------- | ------------------------------ | ------------- |
-| POST   | /api/posts             | Create a new post              | Yes           |
-| GET    | /api/posts             | Retrieve paginated posts       | No            |
-| POST   | /api/posts/{post}/like | Like/unlike a post (toggle)    | Yes           |
-| DELETE | /api/posts/{post}      | Delete a post                  | Yes           |
-| GET    | /api/user              | Get authenticated user details | Yes           |
+| Method | URI                    | Action                         | Auth Required | Required Fields                                              |
+| ------ | ---------------------- | ------------------------------ | ------------- | ------------------------------------------------------------ |
+| POST   | /api/register          | Register a new user            | No            | `name`: string (required), `email`: string (required), `password`: string (required) |
+| POST   | /api/login             | Login an existing user         | No            | `email`: string (required), `password`: string (required)    |
+| POST   | /api/posts             | Create a new post              | Yes           | `content`: string (required)                                 |
+| GET    | /api/posts             | Retrieve paginated posts       | No            | N/A                                                          |
+| POST   | /api/posts/{post}/like | Like/unlike a post (toggle)    | Yes           | N/A                                                          |
+| DELETE | /api/posts/{post}      | Delete a post                  | Yes           | N/A                                                          |
+| GET    | /api/user              | Get authenticated user details | Yes           | N/A                                                          |
