@@ -1,6 +1,6 @@
 # Mini Feed API
 
-This is a simple API built with Laravel 11 that allows users to create, like, and delete posts. 
+This is a simple API built with Laravel 11 that allows users to create, like, and delete posts.
 
 ## Features
 
@@ -9,7 +9,7 @@ This is a simple API built with Laravel 11 that allows users to create, like, an
 -   Email notification when a post is liked (viewable in **Mailpit**)
 -   Fully tested with PHPUnit
 -   Pagination support for post listings
--   Seeders for users and passport client 
+-   Seeders for users and passport client
 
 ## Requirements
 
@@ -24,8 +24,8 @@ Follow these steps to set up the project locally:
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/yourusername/minifeed-api.git
-    cd minifeed-api
+    git clone https://github.com/jeezeee/mini-feed-api
+    cd mini-feed-api
     ```
 
 2. **Set up environment variables: Copy the example environment file and adjust settings as needed.**:
@@ -36,53 +36,56 @@ Follow these steps to set up the project locally:
 
 3. **Install dependencies**: Install the necessary dependencies via Composer.
 
-    ``` bash
-    sail composer install
+    ```bash
+    composer install
     ```
 
-4. **Generate application key**:
+4. ***Set up the database**:
+
+    - Make sure you have the correct database credentials in your `.env` file:
+
+        ```bash
+        DB_CONNECTION=mysql
+        DB_HOST=mysql
+        DB_PORT=3306
+        DB_DATABASE=laravel
+        DB_USERNAME=sail
+        DB_PASSWORD=password
+    ```
+
+
+## Running the Application
+
+1. **Start Laravel Sail**: (optional [-d] flag for detached mode )
+
+    ```bash
+    sail up [-d]
+    ```
+
+2. **Generate application key**: (Sail needs to be running for this step)
+
+    **Note**: When using sail make sure you have a alias setup for the sail command, otherwise use you can use  `./vendor/bin/sail`
 
     ```bash
     sail artisan key:generate
     ```
 
-5. **Set up Passport for authentication**: Run the Passport installation commands to generate the clients.
+3. **Generate Passport keys**: (Sail needs to be running for this step)
 
     ```bash
-    sail artisan passport:install
+    sail artisan passport:keys
     ```
 
-6. **Set up the database**:
-
-    - Make sure you have the correct database credentials in your `.env` file:
-
-      ```bash
-      DB_CONNECTION=mysql
-      DB_HOST=mysql
-      DB_PORT=3306
-      DB_DATABASE=laravel
-      DB_USERNAME=sail
-      DB_PASSWORD=password
-      
-      ```
-
-    Run the migrations and seed the database:
+4. **Run the migrations and seed the database**: (Sail needs to be running for this step)
 
     ```bash
     sail artisan migrate --seed
     ```
 
-## Running the Application
+#### You can now use the application! 
 
-1. **Start Laravel Sail**:
-
-   ```bash
-   sail up
-   ```
-
-2. **Access the application**: The API will be available at `http://localhost`.
-
-3. **Mailpit Setup**: Mailpit is used to capture outgoing emails. You can view the emails sent by the application at `http://localhost:8025`.
+**Access the application**: The API will be available at `http://localhost`.
+**Mailpit Setup**: Mailpit is used to capture outgoing emails. You can view the emails sent by the application at `http://localhost:8025`.
 
 ## Testing
 
