@@ -40,7 +40,7 @@ Follow these steps to set up the project locally:
     composer install
     ```
 
-4. ***Set up the database**:
+4. **\*Set up the database**:
 
     - Make sure you have the correct database credentials in your `.env` file:
 
@@ -51,10 +51,7 @@ Follow these steps to set up the project locally:
         DB_DATABASE=laravel
         DB_USERNAME=sail
         DB_PASSWORD=password
-    ```
-
-
-
+        ```
 
 ## Running the Application
 
@@ -66,7 +63,7 @@ Follow these steps to set up the project locally:
 
 2. **Generate application key**: (Sail needs to be running for this step)
 
-    **Note**: When using sail make sure you have a alias setup for the sail command, otherwise use you can use  `./vendor/bin/sail`
+    **Note**: When using sail make sure you have a alias setup for the sail command, otherwise use you can use `./vendor/bin/sail`
 
     ```bash
     sail artisan key:generate
@@ -84,7 +81,7 @@ Follow these steps to set up the project locally:
     sail artisan migrate --seed
     ```
 
-#### You can now use the application! 
+#### You can now use the application!
 
 **Access the application**: The API will be available at `http://localhost`.
 **Mailpit Setup**: Mailpit is used to capture outgoing emails. You can view the emails sent by the application at `http://localhost:8025`.
